@@ -14,7 +14,8 @@ gulp.task('scripts', function() {
 
 gulp.task('css', function() {
 	var src = ['bower_components/bootstrap/dist/css/bootstrap.min.css',
-		'bower_components/bootstrap/dist/css/bootstrap-theme.min.css'];
+		'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+		'custom/custom.css'];
     return gulp.src(src)
       .pipe(concat('main.css'))
       .pipe(gulp.dest('public/css'));

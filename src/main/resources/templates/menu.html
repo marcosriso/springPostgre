@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <div th:fragment="menu">
+	    <ul class="nav nav-pills nav-stacked">
+			<li role="presentation" th:classappend="${active == 'home'} ? active : ''"><a href="/home">Lista</a></li>
+			<li role="presentation" th:classappend="${active == 'form'} ? active : ''"><a href="/inserir">Inserir</a></li>
+			<li role="presentation" th:classappend="${active == 'prj'} ? active : ''"><a href="/projetos">Projetos</a></li>
+		</ul>
+    </div>
+  </body>
+</html>

@@ -11,13 +11,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-2">
-					<ul class="nav nav-pills nav-stacked">
-						<li role="presentation" class="active"><a href="/">Lista</a></li>
-						<li role="presentation"><a href="/inserir">Inserir</a></li>
-						<li role="presentation"><a href="/projetos">Projetos</a></li>
-					</ul>
-				</div>
+				<div class="col-md-2" th:include="menu :: menu"></div>
 				<div class="col-md-10">
 					<form action="/saveedit" method="post">
 						<div class="form-group">
@@ -28,6 +22,14 @@
 							<label for="senha">Senha</label> 
 							<input type="password" class="form-control" id="password" th:value="${users.password}" name="password" placeholder="Password" />
 						</div>
+						
+						<div class="form-group">
+							<label for="projects">Projetos</label> 
+							<select class="form-control" id="project" name="project" >
+								<option th:selected="${projects.id == users.project.id}" th:each="projects : ${projects}" th:value="${projects.id}"><span th:text="${projects.description}"></span></option>
+							</select>
+						</div>
+						
 						<input type="hidden" th:value="${users.id}" name="id" />
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
